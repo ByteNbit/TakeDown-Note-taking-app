@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en-US">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name='viewport' content='width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no'>
+      <meta name="robots" content="A Note taking app simple, best, secure, powerful, fast, no Sign up required, no data is send to server", follow>
+      <meta name="description" content="A Note taking app simple, best, secure, powerful, fast, no Sign up required, no data is send to server">
+      <meta name="keywords" content="Note, powerful, no data is send to server, secure, localstorage, webstorage">
+      <meta name="author" content="https://bytenbit.com/">
+      <meta name="publisher" content="https://bytenbit.com/">
+      <meta name="copyright" content="https://bytenbit.com/">
+
+      <link rel="shortcut icon" type="image/png" href="img/bytenbit_favicon.png"/>
+      <link rel='stylesheet' href='https://themes.getbootstrap.com/wp-content/themes/bootstrap-marketplace/style.css?ver=1531597991' />
+      <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="stylesheet" type="text/css" href="style.css">
+      <title>Takedown - Note taking app</title>
+
+   </head>
+   <body>
+      <!-- <div id="page" class="hfeed site"> -->
+  <main id="main" class="site-main main">
+
+      <nav class="navbar navbar-expand-lg navbar-light">
+         <div class="container pull-left">
+            <a href="index.html" class="navbar-brand" href="/"><h1>TakeDown - Note taking app</h1></a>
+            <!-- <div class="d-flex ml-auto"> -->
+               <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#globalNavbar" aria-controls="globalNavbar" aria-expanded="false" aria-label="Toggle navigation"> -->
+                <!-- <span class="navbar-toggler-icon"></span></button> -->
+            </div>
+            <div class="container pull-right">
+               <ul class="navbar-nav d-none d-lg-flex ml-2 order-3">
+                  <li class="nav-item"><a class="nav-link" href="">Simple, Powerful, Fast, No Sign up required, No data is send to server</a></li>
+               </ul>
+            </div>
+         </div>
+      </nav>
+    <div class="container" style="margin-top: 15px">
+      <!-- <div  style="outline: none;" ></div> -->
+
+      <div class="row">
+        <div class="col-md-6">
+            <textarea placeholder="Type, for High priority tasks" class="auto-text-area" id="notepad">&bull;</textarea>
+            <textarea placeholder="Type, for Medium priority tasks" class="auto-text-area" id="notepad2">&bull;</textarea>
+        </div>
+        <div class="col-md-6">
+          <textarea placeholder="Type, for Low priority tasks" class="auto-text-area" id="notepad1">&bull;</textarea>
+        </div>
+      </div>
+    </div>
+</main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__item justify-content-lg-between align-items-lg-center">
+          <div class="pull-left">
+             <ul id="menu-footer" class="nav sub-nav footer__sub-nav"><li id="menu-item-1194" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1194"><a title="Contact" href="https://www.bytenbit.com/contact-us/">Contact</a></li>
+            <li id="menu-item-119" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-108 current_page_item menu-item-119 active"><a title="Terms of Service" href="terms.html">Terms</a></li>
+            <li id="menu-item-119" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-108 current_page_item menu-item-119 active"><a title="How it's works" href="how_it_works.html">How it's works</a></li>
+            <li id="menu-item-119" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-108 current_page_item menu-item-119 active"><a title="How it's works" href="https://github.com/ByteNbit/bytenbit.github.io">Contribute</a></li>
+            </ul>
+          </div>
+          <div class="pull-right">
+            <a href="https://github.com/ByteNbit/TakeDown-Note-taking-app"><i style="font-size:24px;margin-left: 10px;color: black" class="fa">&#xf09b;</i></a>
+            <a href="https://www.facebook.com/ByteNbit"><i style="font-size:24px;margin-left: 10px;color:#3B5998" class="fa">&#xf230;</i></a>
+
+            <a href="https://www.linkedin.com/company/bytenbit/"><i style="font-size:24px;margin-left: 10px;color: #0077B5" class="fa">&#xf08c;</i></a>
+            <p class="hidden-sm-down d-none d-lg-block" style="margin-left: 10px">Product of<a href="https://bytenbit.com">  ByteNbit.</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <script
+    src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+
+<script>
+  $(function () {
+    $('.auto-text-area').on('keyup',function(){
+      $(this).css('height','auto');
+      $(this).height(this.scrollHeight);
+    });
+  });
+
+
+  $(function () {
+    $("textarea").each(function () {
+        this.style.height = (this.scrollHeight+10)+'px';
+    });
+  });
+
+
+    $('#notepad , #notepad1  , #notepad2 ').on('keydown',function(e){
+      var t = $(this);
+      if (t.val() == ""){
+        t.val('•' + " ");
+      }
+      switch(e.which){
+      case 13:
+        t.val(t.val() + "\n" + '•' + " ");
+        return false;
+      }
+    });
+
+    var n = document.getElementById("notepad");
+    var s = function(){localStorage.setItem("notepad", n.value);}
+    if(window.localStorage){ n.value = localStorage.getItem("notepad");}/* retrieve (only on page load) */
+    n.onchange = s();
+    setInterval( s, 500);
+    window.onunload = s();
+
+    var n1 = document.getElementById("notepad1");
+    var s1 = function(){localStorage.setItem("notepad1", n1.value);}
+    if(window.localStorage){ n1.value = localStorage.getItem("notepad1");}/* retrieve (only on page load) */
+    n1.onchange = s1();
+    setInterval( s1, 500);
+    window.onunload = s1();
+
+    var n2 = document.getElementById("notepad2");
+    var s2 = function(){localStorage.setItem("notepad2", n2.value);}
+    if(window.localStorage){ n2.value = localStorage.getItem("notepad2");}/* retrieve (only on page load) */
+    n2.onchange = s2();
+    setInterval( s2, 500);
+    window.onunload = s2();
+
+    </script>
+  </body>
+</html>
